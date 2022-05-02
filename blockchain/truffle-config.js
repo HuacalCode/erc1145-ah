@@ -5,7 +5,7 @@ module.exports = {
   contracts_directory: "./contracts/solidity",
   compilers: { 
     solc: { 
-      version: "^0.6.0"
+      version: ">=0.4.22 <0.9.0"
     }
   },
   networks: {
