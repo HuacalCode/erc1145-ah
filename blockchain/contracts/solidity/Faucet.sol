@@ -7,19 +7,19 @@ contract Faucet {
     
     //State Variables
     address private contractOwner;
-    address private galleryAddress;
+    address private armoryAddress;
 
     //Events
     event newAccountFunded(address);
 
-    constructor(address addGallery) public{
+    constructor(address addArmory) public{
         contractOwner = msg.sender;
-        galleryAddress = addGallery;
+        armoryAddress = addArmory;
     }
 
     function fundAccount(address _newAccountFunded) external{
         //can fund account just one time
-        IERC1155(galleryAddress).safeTransferFrom(address(this), _newAccountFunded, 2, 1, "0x0");
+        IERC1155(armoryAddress).safeTransferFrom(address(this), _newAccountFunded, 0, 10000, "");
         emit newAccountFunded(_newAccountFunded);
     }
 
